@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/websiteBoxEntry"
+	style="@style/entryAdditionalInformation"
+    android:layout_height="wrap_content"
+    android:layout_width="fill_parent"
+    android:layout_marginTop="5dip"
+    android:layout_marginBottom="5dip">
+    
+    <LinearLayout
+        android:id="@+id/monitorIcon"
+        android:layout_height="fill_parent"
+        android:layout_width="wrap_content"
+        android:layout_alignParentLeft="true">
+	   	<ImageView
+	   	    android:layout_width="60dip"
+	   	    android:layout_height="60dip"
+			android:src="@drawable/monitor"
+			android:contentDescription="@string/additionalInformationAddress"/>
+   	</LinearLayout>
+			   
+	<TextView 
+	    style="@style/additionalInformationTextView"
+	    android:layout_height="wrap_content"
+	    android:layout_width="wrap_content"
+	    android:layout_marginTop="20dip"
+	    android:layout_marginLeft="5dip"
+        android:layout_toRightOf="@+id/monitorIcon"
+   		android:id="@+id/entryActivityWebsite"
+	    />
+</RelativeLayout>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:orientation="vertical"
+              android:background="#010101"
+              >
+   <RelativeLayout
+        android:id="@+id/itemContainer"
+        style="@style/categoryListItemContainer"        
+        android:scaleType="fitXY">
+        
+   	    <RelativeLayout 
+   	        android:id="@+id/entry_item_image_container"
+   	        android:layout_height="fill_parent"
+   	        android:layout_width="wrap_content"
+   	        >
+   	        
+   	        <ImageView
+            	android:contentDescription="@string/list_view_image_description"
+	            android:background="@drawable/image_view_border"
+				android:id="@+id/entry_item_image"
+				android:layout_height="50dip"
+				android:layout_width="50dip"
+				android:scaleType="fitStart"
+				android:adjustViewBounds="true"
+   	       		/>
+
+        </RelativeLayout>
+
+   	    <RelativeLayout 
+   	        android:id="@+id/entry_item_content"
+   	        android:layout_height="fill_parent"
+   	        android:layout_width="wrap_content"
+   	        android:layout_alignParentRight="true"
+   	        android:layout_toRightOf="@+id/entry_item_image_container"
+			android:layout_marginLeft="10dip"
+   	        >
+			<TextView 
+			    android:id="@+id/entry_item_title"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:textSize="@dimen/text_size_medium"
+				android:textColor="@color/lighterGrey" />
+			
+	        <TextView
+	            android:id="@+id/entry_item_description"
+	            android:layout_width="fill_parent"
+	            android:layout_height="37sp"
+				android:textSize="@dimen/text_size_small"
+	            android:layout_below="@+id/entry_item_title"
+	            android:textColor="@color/lighterGrey" />
+        </RelativeLayout>
+        
+   	    <RelativeLayout 
+   	        android:id="@+id/list_view_item_arrow"
+   	        android:layout_height="fill_parent"
+   	        android:layout_width="wrap_content"
+	        android:layout_alignParentRight="true">	
+	        <ImageView 
+	            android:contentDescription="@string/list_view_arrow_description"
+	            android:layout_height="20dip"
+	            android:layout_width="20dip"
+	            android:src="@drawable/arrow_right"
+	            />   	        
+   	    </RelativeLayout>
+
+	</RelativeLayout>
+	<LinearLayout
+	    style="@style/catgegoryListItemBorder"	    
+		android:orientation="vertical"
+	    android:layout_margin="0dip"
+	    android:layout_below="@+id/itemContainer"	    
+        android:scaleType="fitXY" >	 
+	</LinearLayout>
+</RelativeLayout>

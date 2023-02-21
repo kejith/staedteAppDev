@@ -1,40 +1,110 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.staedteappdev"
-    android:versionCode="1"
-    android:versionName="1.0" >
+    package="com.staedte.app.ibbenbueren"
+    android:versionCode="7"
+    android:versionName="1.03.011" >
 
+    <!-- Internet Permissions -->
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
-    <uses-sdk
-        android:minSdkVersion="8"
-        android:targetSdkVersion="17" />
+    <!-- Storage Permissions -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    
+    <!-- Phone Permission -->
+    <uses-permission android:name="android.permission.CALL_PHONE" />
 
-    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="17" />
 
     <application
         android:allowBackup="true"
-        android:debuggable="true"
-        android:icon="@drawable/ic_launcher"
+        android:icon="@drawable/logo_hdpi"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
-        <provider
-            android:name="com.example.staedteappdev.contentProvider.EntryListProvider"
-            android:authorities="com.example.staedteappdev.contentProvider" />
 
+        <!-- <uses-library android:name="com.google.android.maps"/> -->
+
+        <provider
+            android:name="com.staedte.app.ibbenbueren.contentProvider.EntryListProvider"
+            android:authorities="com.staedte.app.ibbenbueren.contentProvider" />
         <activity
-            android:name="com.example.staedteappdev.ListViewLoader"
-            android:label="@string/app_name" >
+            android:name="com.staedte.app.ibbenbueren.HomeActivity"
+            android:label="@string/title_activity_home"
+            android:theme="@style/Theme.D1" >
+        </activity> 
+        <activity
+            android:name="com.staedte.app.ibbenbueren.SplashScreen"
+            android:theme="@style/Theme.D1" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.staedteappdev.EntryActivity"
-            android:label="@string/title_activity_entry" >
+            android:name="com.staedte.app.ibbenbueren.ListViewLoader"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.D1" >
+        </activity>
+        <activity
+            android:name="com.staedte.app.ibbenbueren.CategoryEntryListView"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.D1" >
+        </activity>
+        <activity
+            android:name="com.staedte.app.ibbenbueren.CategoryViewLoader"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.D1" >
+        </activity>
+        <activity
+            android:name="com.staedte.app.ibbenbueren.EntryActivity"
+            android:label="@string/title_activity_entry"
+            android:theme="@style/Theme.D1" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="maps.google.com"
+                    android:scheme="https" />
+                <data android:scheme="geo" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.staedte.app.ibbenbueren.DashboardActivity"
+            android:label="@string/title_activity_dashboard" >
+        </activity>
+        <activity
+            android:name="com.staedte.app.ibbenbueren.SearchActivity"
+            android:label="@string/title_activity_search"
+            android:theme="@style/Theme.D1" >
+        </activity>
+        <activity
+            android:name="com.staedte.app.ibbenbueren.AboutActivity"
+            android:label="@string/title_activity_about"
+            android:theme="@style/Theme.D1" >
+        </activity>
+        <activity
+            android:name="com.staedte.app.ibbenbueren.ViewPagerTest"
+            android:label="@string/title_activity_view_pager_test" >
+        </activity>
+		<activity
+            android:name="com.staedte.app.ibbenbueren.MainActivity"
+            android:theme="@style/Theme.PageIndicatorDefaults"
+            android:label="@string/title_activity_main" >
+        </activity>
+		<activity
+            android:name="com.staedte.app.ibbenbueren.FullScreenViewActivity"
+            android:label="@string/title_activity_main" >
+        </activity>
+		<activity
+            android:name="com.staedte.app.ibbenbueren.PdfViewer"
+            android:label="@string/title_activity_main" >
         </activity>
     </application>
 

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/addressBox"
+	style="@style/entryAdditionalInformation"
+    android:layout_height="wrap_content"
+    android:layout_width="fill_parent"
+    android:layout_marginTop="5dip"
+    android:layout_marginBottom="5dip">
+	
+    <LinearLayout
+        android:id="@+id/addressIcon"
+        android:layout_height="fill_parent"
+        android:layout_width="wrap_content"
+        android:layout_alignParentLeft="true">
+	   	<ImageView
+	   	    android:layout_width="60dip"
+	   	    android:layout_height="60dip"
+			android:src="@drawable/id"
+			android:contentDescription="@string/additionalInformationAddress"/>
+   	</LinearLayout>
+	
+    <RelativeLayout
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_toRightOf="@+id/addressIcon"
+        style="@style/additionalInformationTextViewContainer">
+		<TextView  
+		    style="@style/additionalInformationTextView"
+		    android:layout_height="wrap_content"
+		    android:layout_width="wrap_content"
+		  	android:id="@+id/entryActivityStreet"
+		  	android:layout_alignParentTop="true"
+		    />
+		
+		<TextView  
+		    style="@style/additionalInformationTextView"
+		    android:layout_height="wrap_content"
+		    android:layout_width="wrap_content"
+		  	android:id="@+id/entryActivityCity"
+		  	android:layout_below="@+id/entryActivityStreet"	
+		    />
+		
+		<TextView 
+		    style="@style/additionalInformationTextView"
+		    android:layout_height="wrap_content"
+		    android:layout_width="wrap_content"
+	   		android:id="@+id/entryActivityCountry"
+		  	android:layout_below="@+id/entryActivityCity"	
+		    />
+    </RelativeLayout>
+</RelativeLayout>
